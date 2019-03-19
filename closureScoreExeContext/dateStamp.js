@@ -7,7 +7,33 @@
 
 //input takes in function
 
+//the returned function will accept whatever arguments
 
+//returns a function
+
+function dateStamp(func){
+    const cb = func;
+    return function(...args){
+        const obj = {}
+        const output = cb(...args);
+        const today = new Date().toDateString();
+        obj['date'] = today;
+        obj['output'] = output;
+        return obj; 
+    }
+}
+
+const dateStamp = (callback) => {
+    const stampObj = {};
+    // const options = {
+    //  weekday: 'short', year: 'numeric', month: 'long', day: 'numeric'
+    // };
+    return (...args) => {
+      stampObj.date = new Date().toDateString();
+      stampObj.output = callback(...args);
+      return stampObj; // {date:'date', output: 'callback(...args)'};
+    };
+  };
 
 //output returns a function
 
@@ -15,6 +41,7 @@
 // ADD CODE HERE
 
 // Uncomment these to check your work!
-// const stampedMultBy2 = dateStamp(n => n * 2);
-// console.log(stampedMultBy2(4)); // should log: { date: (today's date), output: 8 }
-// console.log(stampedMultBy2(6)); // should log: { date: (today's date), output: 12 }
+const stampedMultBy2 = dateStamp(n => n * 2);
+console.log(stampedMultBy2(4)); // should log: { date: (today's date), output: 8 }
+console.log(stampedMultBy2(6)); // should log: { date: (today's date), output: 12 }
+console.log(stampedMultBy2(-5))

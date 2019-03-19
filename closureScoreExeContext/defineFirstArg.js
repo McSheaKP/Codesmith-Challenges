@@ -1,5 +1,5 @@
-// Create a function defineFirstArg that accepts a function and an argument. 
-// Also, the function being passed in will accept at least one argument. 
+//1. Create a function defineFirstArg that accepts a function and an argument. 
+//2. Also, the function being passed in will accept at least one argument. 
 // defineFirstArg will return a new function that invokes the passed-in 
 // function with the passed-in argument as the passed-in function's first argument. 
 // Additional arguments needed by the passed-in function will need to be passed into the returned function.
@@ -8,14 +8,16 @@
 //input function
     //func will take at least one argument
 
-//returns a new func that invoakes passed in function
+//returns a new func that invokes passed in function
 
 
-function defineFirstArg(cb, arg1){
-    const arg2 = arg1;
-    const callback = cb;
-    const returnFunc = function(arg){
-        const output = callback(arg2, arg)
+
+
+function defineFirstArg(cb, value){
+    const saved = value;
+   
+    const returnFunc = function(...args){
+        const output = cb(value, ...args)
         return output
     }
     return returnFunc;
