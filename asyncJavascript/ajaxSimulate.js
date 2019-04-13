@@ -18,7 +18,18 @@
 
 let dataReceived;
 
+
+
 function ajaxSimulate(id, callback) {
   const database = ['Aaron', 'Barbara', 'Chris'];
-  // Add code here
+    //modify the function, so that it will set a timer that will pass the emlement
+    //of the database whose index matches id to the callback
+    setTimeout(callback, 0, database[id])
 }
+
+function storeData(data){
+    dataReceived = data;
+    console.log(dataReceived)
+}
+
+ajaxSimulate(1, storeData);
