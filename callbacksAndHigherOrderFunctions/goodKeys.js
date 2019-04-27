@@ -5,9 +5,22 @@
 // values yielded a true return value from the callback.
 
 // ADD CODE HERE
+//Inputs (object and callback)
+//
+
+function goodKeys(obj, callback){
+const returnArr = []
+for (let key in obj){
+    const output = callback(obj[key])
+    if(output === true){
+        returnArr.push(key)
+    }
+}
+return returnArr;
+}
 
 
 // Uncomment these to check your work!
-// const sunny = { mac: 'priest', dennis: 'calculator', charlie: 'birdlaw', dee: 'bird', frank: 'warthog' };
-// function startsWithBird(str) { return str.slice(0, 4).toLowerCase() === 'bird'; };
-// console.log(goodKeys(sunny, startsWithBird)); // should log: ['charlie', 'dee']
+const sunny = { mac: 'priest', dennis: 'calculator', charlie: 'birdlaw', dee: 'bird', frank: 'warthog' };
+function startsWithBird(str) { return str.slice(0, 4).toLowerCase() === 'bird'; };
+console.log(goodKeys(sunny, startsWithBird)); // should log: ['charlie', 'dee']

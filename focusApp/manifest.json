@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "name": "Focus",
+    "version": "1.0",
+    "description": "example description about our app",
+    "content_scripts": [
+        {
+          "matches": ["https://youtube.com/*"],
+          "js": ["./main.js"]
+        }
+      ] 
+}
