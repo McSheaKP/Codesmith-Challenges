@@ -3,10 +3,9 @@
 // use your "passOne" to determine if the number 113 is negative,
 // even, OR has 1 as the first digit. Then test 213.
 function passOne ( anyvalue, arrayOfFunc ){
-    arrayOfFunc.reduce( function(acc, currVal){
-         acc = currVal(anyvalue);
-        return acc;
-    },false)
+    return arrayOfFunc.reduce( function(acc, currVal){
+        if(c)
+    }, false)
 
     
 }
@@ -22,8 +21,8 @@ function passOne ( anyvalue, arrayOfFunc ){
 // }
 
 function isNeg (value){
-    if (value < 0){
-        return true;
+    if (value < 0){ß
+        return true;ß
     } else {
         return false;
     }
